@@ -1,10 +1,10 @@
-aula 29 cruzamento
-
+aula 24 cruzamento
 /*
 Autor: Rhuan Wictor
-Nome do programa: Pisca - pisca
+Nome do programa: Semáforo cruzamento
 Data:20/02/2025
-Descrição: Semaforo cruzamento
+Descrição: Sistema de um cruzamento de 2 semáforos, onde com comandos
+ambos ligam e desligam seguindo uma ordem.
 */
 
 
@@ -54,12 +54,12 @@ void setup()
     digitalWrite(pinLedVermelho2,LOW);
      }
 
-Aula 28 semáforo
+Aula 23 semáforo
 /*
 Autor: Rhuan Wictor
-Nome do programa: Pisca - pisca
+Nome do programa: Semaforo
 Data:19/02/2025
-Descrição: Semaforo
+Descrição: Sistema de um semaforo , acendendo e apagar as cores de acordo com comandos .
 */
 
 
