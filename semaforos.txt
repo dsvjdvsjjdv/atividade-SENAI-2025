@@ -1,0 +1,92 @@
+aula 29 cruzamento
+
+/*
+Autor: Rhuan Wictor
+Nome do programa: Pisca - pisca
+Data:20/02/2025
+Descrição: Semaforo cruzamento
+*/
+
+
+#define pinLedVermelho1 10
+#define tempoLedVermelho1 3000
+#define pinLedAmarelo1 9
+#define tempoLedAmarelo1 2050
+#define pinLedVerde1 8
+#define tempoLedVerde1 1050
+
+#define pinLedVermelho2 4
+#define tempoLedVermelho2 5000
+#define pinLedAmarelo2 3
+#define tempoLedAmarelo2 3000
+#define  pinLedVerde2 2
+#define tempoLedVerde2 2000
+
+void setup()
+{
+  pinMode(pinLedVermelho1, OUTPUT);
+  pinMode(pinLedVerde1, OUTPUT);
+  pinMode(pinLedAmarelo1, OUTPUT);
+  
+  pinMode(pinLedVermelho2, OUTPUT);
+  pinMode(pinLedVerde2, OUTPUT);
+  pinMode(pinLedAmarelo2, OUTPUT);
+}
+  void loop()
+  {
+    digitalWrite(pinLedVermelho1, HIGH);
+    digitalWrite(pinLedVerde2, HIGH);
+    delay(tempoLedVerde2);
+    delay(tempoLedVermelho1);
+    digitalWrite(pinLedVerde2,LOW);
+    digitalWrite(pinLedAmarelo2, HIGH);
+    delay(tempoLedAmarelo2);
+    digitalWrite(pinLedAmarelo2,LOW);
+    digitalWrite(pinLedVermelho1,LOW);
+    digitalWrite(pinLedVermelho2,HIGH);
+    digitalWrite(pinLedVerde1,HIGH);
+    delay(tempoLedVerde1);
+    delay(tempoLedVermelho2);
+    digitalWrite(pinLedVerde1,LOW);
+    digitalWrite(pinLedAmarelo1,HIGH);
+    delay(tempoLedAmarelo1);
+    digitalWrite(pinLedAmarelo1,LOW);
+    digitalWrite(pinLedVermelho2,LOW);
+     }
+
+Aula 28 semáforo
+/*
+Autor: Rhuan Wictor
+Nome do programa: Pisca - pisca
+Data:19/02/2025
+Descrição: Semaforo
+*/
+
+
+#define pinLedVermelho 13
+#define tempoLigado Vermelho 5
+#define pinLedVerde 11
+#define tempoLigado Verde  3
+#define pinLedAmarelo 12
+#define tempoLigado Amarelo 2
+#define tempoLedVermelho 5000
+#define tempoLedVerde 3000
+#define tempoLedAmarelo 2000
+void setup()
+{
+  pinMode(pinLedVermelho, OUTPUT);
+  pinMode(pinLedAmarelo, OUTPUT);
+  pinMode(pinLedVerde, OUTPUT);
+}
+  void loop()
+  {
+ digitalWrite(pinLedVermelho,HIGH);
+ delay(tempoLedVermelho);
+ digitalWrite(pinLedVermelho,LOW);
+ digitalWrite(pinLedVerde, HIGH);
+ delay(tempoLedVerde);
+ digitalWrite(pinLedVerde, LOW);
+ digitalWrite(pinLedAmarelo, HIGH);
+ delay(tempoLedAmarelo);
+ digitalWrite(pinLedAmarelo, LOW);
+  }
