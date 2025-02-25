@@ -1,0 +1,19 @@
+EXERCICIO 
+
+1-Crie um programa que utilize um valor fixo (por exemplo, 600) e execute as seguintes etapas:
+
+Use a função map() para converter esse valor de um intervalo de 0 a 1023 para um novo intervalo de 0 a 100.
+Em seguida, use a função constrain() para garantir que o valor remapeado fique entre 20 e 80.
+Exiba o valor final resultante no Monitor Serial.
+
+
+2- Crie um programa que inicie uma variável contador com o valor de 0. Utilize os operadores de incremento(++) para aumentar o contador ate 10, exibindo cada valor no Monitor Serial. Em seguida , utilize os operadores de decremento(--) para diminuir o contador de 10 ate 0, exibindo cada valor 
+
+3-Crie um programa que defina duas variáveis inteiras, valor1 e valor2, e calcule a media aritmética desses valores. Para exibir o resultado com uma casa decimal, converta os valores para float quando necessário.
+Tarefas:
+
+Defina as variaveis valor1 e valor2 com valores inteiros.
+Calcule a media: some os dois valores e divida o resultado por 2.
+Converta para float para exibir o resultado com uma casa decimal.
+Exiba o valor da media do Monitor Serial
+
