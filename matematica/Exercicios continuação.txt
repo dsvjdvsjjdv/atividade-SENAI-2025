@@ -1,0 +1,64 @@
+Exercicios continuação
+
+/*
+Nome do arquivo: Exercicios continuação
+Autor: Rhuan Wictor Chultez de Oliveira
+Data:26/02/2025
+Descrição: Exercicios de continuação aula 28
+*/
+
+
+
+void setup():
+{
+  Serial.begin(9600);
+     //Se imc for maior que 25,09 
+  /*if( imc >25,09){
+  Serial.println("Excesso de peso");
+  
+  }else{
+  Serial.println(" peso errado");
+  */
+    
+   
+  float altura = 1.82;
+  float peso = 90;
+  
+  float imc = peso / sq(altura);
+  
+  if (imc < 18.5){
+ Serial.println("Abaixo do peso");
+    
+  }else if(imc >= 18.5 && imc < 24.9){
+  Serial.println("Peso normal");
+    
+    
+  }else if(imc >= 25 && imc <29.9){
+   Serial.println("Excesso de peso");
+  
+  }else if(imc >= 30 && imc < 34.9){
+  Serial.println("Obesidade 1");
+  
+  }else if(imc >=35 && imc < 39.9)
+  Serial.println("Obesidade 2"); 
+}
+  
+  
+void loop ()
+{
+
+}
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
