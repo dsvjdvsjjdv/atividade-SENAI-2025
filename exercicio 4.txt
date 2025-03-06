@@ -1,0 +1,24 @@
+exercicio 4 
+
+/*
+Nome do arquivo: Exercicios matematica
+Autor: Rhuan Wictor Chultez de Oliveira
+Data: 25/02/2025
+Descrição: Exerciicios com matematica com diferentes funções
+*/
+
+int numero = 8;
+
+void setup()
+{
+  Serial.begin(9600);
+  if (numero <=0){
+    Serial.println("negativo");
+    
+  }else if(numero>= 0);{
+      Serial.print("positivo");
+      }
+}
+  void loop()
+  {
+  }
