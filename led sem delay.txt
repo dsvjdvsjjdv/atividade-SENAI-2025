@@ -1,0 +1,32 @@
+led sem delay
+
+/*
+Nome do arquivo: Led sem delay
+Autor:Rhuan Wictor Chultez de Oliveira
+Data: 07/03/2025
+Descrição: fazendo um led ligar e piscar sem delay.
+
+*/
+#define pinLedVermelho 8
+
+unsigned long tempoinicial = 0;
+bool estadoLed= 0;
+
+
+void setup()
+{
+pinMode(pinLedVermelho,OUTPUT);
+
+}
+
+
+void loop ()
+{
+unsigned long tempoAtual = millis();
+  if (tempoAtual - tempoInicial >= 1000)
+  {
+    estadoLed= !estadoLed;
+    digitalWrite(pinLedVermelho, estadoLed);
+    tempoInicial = tempoAtual;
+  }
+}
