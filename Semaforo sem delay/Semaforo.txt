@@ -1,0 +1,72 @@
+Semaforo
+
+/*
+Nome do arquivo: semaforo sem delay
+Autor:Rhuan Wictor Chultez de Oliveira
+Data: 10/03/2025
+Descrição: fazendo um semaforo ligar e piscar sem delay.
+
+*/
+
+#define pinLedVermelho 10
+#define pinLedVerde 8
+#define pinLedAmarelo 9
+
+#define tempoLedVermelho 5000
+#define tempoLedVerde 3000
+#define tempoLedAmarelo 2000
+
+
+unsigned long tempoInicial = 0;
+char faseSemaforo = 0;
+
+/*
+0 --> vermelho
+1 --> verde
+2 --> amarelo
+*/
+
+void setup()
+{
+ pinMode(pinLedVermelho, OUTPUT);
+ pinMode(pinLedVerde,OUTPUT);
+ pinMode(pinLedAmarelo, OUTPUT);
+}
+  void loop()
+  {
+   unsigned long tempoAtual = millis ();
+   
+    if(faseSemaforo == 0)
+    {
+     digitalWrite(pinLedVermelho, HIGH);
+     digitalWrite(pinLedAmarelo , LOW);
+     digitalWrite(pinLedVerde , LOW);
+     if (tempoAtual - tempoInicial >= tempoVermelho)
+     {
+       faseSemaforo = 1;
+       tempoInicial = tempoAtual;
+     }
+    }
+    else if(faseSemaforo == 1)
+    {
+      digitalWrite(pinLedVermelho, LOW);
+      digitalWrite(pinLedAmarelo,LOW);
+      digitalWrite(pinLedVerde, HIGH);
+      if (tempoAtual - tempoInicial >= tempoVerde)
+      {
+        faseSemaforo = 2;
+        tempoInicial = tempoAtual;
+      }
+    }
+    else if (faseSemaforo == 2)
+    {
+      digitalWrite(pinLedVermelho, LOW);
+      digitalWrite(pinLedAmarelo, HIGH);
+      digitalWrite(pinLedVerde,LOW);
+      if (tempoAtual - tempoInicial >=tempoAmarelo)
+      {
+        faseSemaforo = 0;
+        tempoInicial = tempoAtual;
+      }
+    }
+  }
