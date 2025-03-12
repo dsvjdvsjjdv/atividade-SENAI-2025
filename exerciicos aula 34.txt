@@ -1,0 +1,227 @@
+exerciicos 
+
+/*
+Nome do arquivo:
+Autor:Rhuan Wictor Chultez de Oliveira
+Data:27/02/2025
+Descrição:
+*/
+
+Exercício 1
+#define pinLedVermelho 10
+
+ 
+
+void setup()
+{
+Serial.begin(9600);
+ pinMode(pinLedVermelho, OUTPUT);
+  int temperatura = 35;
+  if (temperatura >= 30){
+ digitalWrite(pinLedVermelho,HIGH);
+  
+  } 
+
+}
+void loop () 
+{
+}
+
+
+exercício 2
+
+/*
+Nome do arquivo:
+Autor:Rhuan Wictor Chultez de Oliveira
+Data:27/02/2025
+Descrição:
+*/
+
+#define pinLedVermelho 9
+
+void setup(){
+
+  Serial.begin(9600);
+  int bateria = 10;
+  pinMode(pinLedVermelho,OUTPUT);
+  if (bateria <= 20){
+    digitalWrite(pinLedVermelho,HIGH);
+    
+  }
+
+}
+
+
+void loop () {
+}
+
+exercício 3
+/*
+Nome do arquivo: Exercicios matematica
+Autor: Rhuan Wictor Chultez de Oliveira
+Data: 25/02/2025
+Descrição: Exerciicios com matematica com diferentes funções
+*/
+
+#define pinLedVermelho  8
+
+int numeroA = 2;
+int numeroB = 2;
+int resultado = 0;
+  
+  void setup()
+  {
+  
+ Serial.begin(9600);
+
+pinMode(pinLedVermelho, OUTPUT);
+
+resultado = (numeroA % numeroB);
+
+if (resultado == 0){
+  digitalWrite(pinLedVermelho,HIGH);
+}
+}
+
+void loop () {
+}
+
+exercício 4
+/*
+Nome do arquivo: Exercicios matematica
+Autor: Rhuan Wictor Chultez de Oliveira
+Data: 25/02/2025
+Descrição: Exerciicios com matematica com diferentes funções
+*/
+
+int numero = 8;
+
+void setup()
+{
+  Serial.begin(9600);
+  if (numero <=0){
+    Serial.println("negativo");
+    
+  }else if(numero>= 0);{
+      Serial.print("positivo");
+      }
+}
+  void loop()
+  {
+  }
+
+exercício 5
+/*
+Nome do arquivo:
+Autor:Rhuan Wictor Chultez de Oliveira
+Data:28/02/2025
+Descrição: Exercicios matematica
+*/
+
+int salario = 900;
+int resultado = 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  if (salario < 1000);{
+    resultado = salario * 10 / 100 + salario;
+    Serial.println("Joao gerente");
+    Serial.println ("antigo salario 900");
+    Serial.println ("novo salario");
+    Serial.println (resultado);
+  }
+}
+
+void loop()
+{ 
+}
+
+exercício 6
+/*
+Nome do Arquivo: Estruturas de Desicao
+autor: Rhuan Wictor Chultez de Oliveira
+Data:27/02/2025
+Descrição: Atividade6
+*/
+int salario= 400;
+int porcentagem= 30;
+int porcem= 100;
+int resultado= 0;
+void setup()
+{
+  Serial.begin(9600);
+  if(salario < 500){
+  resultado= salario / porcem;
+  resultado = resultado * porcentagem;
+  resultado= resultado + salario;
+    Serial.println(resultado);
+  }else if (Serial.println("voce nao tem esse direito")){
+ 
+  }
+}
+
+void loop()
+{
+ 
+}
+
+
+exercício 7
+/*
+Nome do Arquivo: Estruturas de Desicao
+autor: Rhuan Wictor Chultez de Oliveira
+Data:27/02/2025
+Descrição: Atividades
+*/
+int numeroA = 5;
+int numeroB =7;
+
+void setup()
+{
+ Serial.begin(9600); //Atividade7
+  if( numeroA > numeroB){
+  Serial.println(" 5 ");
+  }else if (numeroB > numeroA){
+  Serial.println(" 7 ");
+  }
+}
+
+void loop()
+{
+ 
+}
+
+exercício 8
+/*
+Nome do Arquivo: Estruturas de Desicao
+autor: Rhuan Wictor Chultez de Oliveira
+Data:27/02/2025
+Descrição: Atividade8  
+  */
+ int numeroA =7;
+ int numeroB =6;
+ int numeroC =9;
+ int numeroD =3;
+  int resultado= 0;
+
+void setup()
+{
+  Serial.begin(9600);
+  resultado = numeroA + numeroB + numeroC + numeroD;
+  resultado = resultado / 4;
+  if (resultado >=7){
+    Serial.println("Aprovado");
+  }else if(resultado >= 5 && resultado <=7){
+    Serial.println("Recuperacao");
+  }else if (resultado <5){
+  Serial.println("Reprovado");
+  }
+}
+
+void loop()
+{
+ 
+}
+
+
