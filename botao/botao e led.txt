@@ -1,0 +1,48 @@
+botao e led 
+
+
+
+/*
+Nome do Arquivo: ATIVIDADE 34
+autor: Rhuan Wictor Chultez de Oliveira
+Data:11/03/2025
+Descrição: apertar o botao e fazer o led piscar com o botao
+*/
+#define pinBotao 10
+#define pinLed 2
+#define tempoLed 5000
+//--VARIAVEIS GLOBAIS--
+
+ 
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(pinLed, OUTPUT);
+  pinMode(pinBotao, INPUT);
+}
+
+void loop()
+{
+  //READ - LER
+  //READ
+  unsigned long tempoAtual=millis();
+  bool estadoBotao = digitalRead(pinBotao);
+  Serial.println(estadoBotao);
+ 
+  static unsigned long tempoAnterior=0;
+ static bool estadoLed=0;
+ 
+  if(estadoBotao ==1)
+  {
+    if(tempoAtual - tempoAnterior >=100)
+    {
+      estadoLed =!estadoLed;
+      digitalWrite(pinLed, estadoLed);
+      tempoAnterior = tempoAtual;
+    }
+  }
+  else
+  {
+  digitalWrite(pinLed,LOW);
+  }
+}
