@@ -1,0 +1,47 @@
+LED LIGADO AO APERTAR BOTAO
+
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd (0x27, 16, 2);
+
+ #define pinLedVermelho 10
+ #define tempoLed 5000
+ #define pinBotao 2
+
+void setup()
+{
+  Serial.begin(9600);
+  lcd.init();
+  lcd.backlight();
+  pinMode(10,INPUT);
+  lcd.print("LED LIGADO");
+  
+  
+  
+  digitalWrite(pinLedVermelho,HIGH);
+}
+
+
+void loop()
+{
+ unsigned long tempoAtual=millis();
+  bool estadoBotao = digitalRead(pinBotao);
+  Serial.println(estadoBotao);
+ 
+  static unsigned long tempoAnterior=0;
+ static bool estadoLed=0;
+ 
+  if(estadoBotao ==1)
+  {
+    if(tempoAtual - tempoAnterior >=100)
+    {
+      estadoLed =!estadoLed;
+      digitalWrite(pinLedVermelho, estadoLed);
+      tempoAnterior = tempoAtual;
+      
+      
+    }
+  }
+  else
+  {  }
+}
