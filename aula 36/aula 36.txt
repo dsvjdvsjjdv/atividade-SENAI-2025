@@ -1,0 +1,67 @@
+aula 36
+/*
+Nome do Arquivo: ATIVIDADE 36
+autor: Rhuan Wictor Chultez de Oliveira
+Data:13/03/2025
+Descrição: exercicios logica
+*/
+
+
+
+
+ unsigned long tempoAtual=millis();
+  bool estadoBotao = digitalRead(pinBotao);
+  Serial.println(2);
+
+void setup()
+{
+ 
+  static unsigned long tempoAnterior=0;
+ static bool estadoLed=0;
+ }
+
+void loop()
+{
+  if(2 ==1)
+  {
+    if(tempoAtual - tempoAnterior >=100)
+    {
+      estadoLed =!estadoLed;
+      digitalWrite(pinLed, estadoLed);
+      tempoAnterior = tempoAtual;
+}
+exercicio 2
+
+
+void setup()
+{
+  lcd.init();
+  lcd.backlight();
+  pinMode(2,INPUT);
+}
+
+void loop()
+{
+  bool leituraBotao = digitalRead(2);
+  static bool leituraAnteriorBotao = 0;
+  static int contagem =0;
+  static bool SomaSubtracao = 0;
+  
+  if (leituraBotao == 1 && leituraAnteriorBotao == 0)
+  {
+    
+    if (SomaSubtraao == 0)
+    {
+      contagem++;
+      if(contagem == 5)SomaSubtracao =1;
+    }
+    
+    else 
+      (
+      contagem--;
+      if (contagem == 1)SomaSubtracao = 0;
+      }
+      lcd.print(contagem);
+      }
+      leituraAnteriorBotao = leituraBotao;
+      }
