@@ -1,0 +1,66 @@
+/*
+
+Nome do Arquivo: ATIVIDADE 38
+autor: Rhuan Wictor Chultez de Oliveira
+Data:17/03/2025
+Descrição: exercicios botao
+
+*/
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd (0x27, 16, 2);
+
+ #define Botao1 0
+ #define Botao2 145
+ #define Botao3 329
+ #define Botao4 505
+ #define Botao5 741
+
+
+
+void setup()
+{
+  Serial.begin(9600);
+  
+ 
+   lcd.init();
+   lcd.backlight();
+  
+}
+void loop()
+{
+  int valor = analogRead(A0);
+  if (valor == Botao1)
+  {
+   lcd.print("Botao1 apertado ");
+  }
+  else if(valor == Botao2)
+  {
+    lcd.setCursor(0,0);
+    lcd.print("Botao2 apertado");
+   
+  }
+  else if(valor == Botao3) 
+  {
+    lcd.setCursor(0,0);    
+    lcd.print("Botao3 apertado");
+   
+  }
+  else if(valor == Botao4) 
+  {
+    lcd.setCursor(0,0);
+    lcd.print("Botao4 apertado");
+  
+  }
+  else if(valor == Botao5) 
+  {
+    lcd.setCursor(0,0);
+    lcd.print("Botao5 apertado"); 
+  }
+  else if (valor =1023) 
+  {
+    lcd.setCursor(0,0);
+    lcd.print("desligado");
+  }
+}
+  
