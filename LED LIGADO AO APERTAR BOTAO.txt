@@ -1,5 +1,13 @@
 LED LIGADO AO APERTAR BOTAO
 
+Nome do Arquivo: ATIVIDADE 36
+autor: Rhuan Wictor Chultez de Oliveira
+Data:14/03/2025
+Descrição: exercicios logica
+*/
+
+
+
 #include <LiquidCrystal_I2C.h>
 
 LiquidCrystal_I2C lcd (0x27, 16, 2);
@@ -10,11 +18,11 @@ LiquidCrystal_I2C lcd (0x27, 16, 2);
 
 void setup()
 {
-  Serial.begin(9600);
-  lcd.init();
-  lcd.backlight();
+ 
   pinMode(10,INPUT);
-  lcd.print("LED LIGADO");
+  pinMode(pinBotao, INPUT);
+   lcd.init();
+  lcd.backlight();
   
   
   
@@ -24,24 +32,30 @@ void setup()
 
 void loop()
 {
- unsigned long tempoAtual=millis();
-  bool estadoBotao = digitalRead(pinBotao);
-  Serial.println(estadoBotao);
- 
-  static unsigned long tempoAnterior=0;
- static bool estadoLed=0;
- 
-  if(estadoBotao ==1)
-  {
-    if(tempoAtual - tempoAnterior >=100)
+  
+ bool estadoAtualBotao = digitalRead(pinBotao);
+ static bool estadoAnteriorBotao =0;
+  static bool estadoLed = 0;
+  
+  if(estadoAtualBotao == 1 && estadoAnteriorBotao ==0)
+    (
+     estadoLed = !estadoLed;
+    digitalWrite(pinLed, estadoLed);
+    
+    if(estadoLed == 1)
     {
-      estadoLed =!estadoLed;
-      digitalWrite(pinLedVermelho, estadoLed);
-      tempoAnterior = tempoAtual;
       
+    
+    lcd.setCursor(0,0);
+    lcd.print("LIGADO   ");
       
+      }
+    
+      else
+      {
+        lcd.setCursor(0,0);
+        lcd.print("DESLIGADO");
+      }
     }
-  }
-  else
-  {  }
-}
+    estadoAnteriorBotao = estadoAtualBotao;
+    }

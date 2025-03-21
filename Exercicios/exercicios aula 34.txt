@@ -1,10 +1,10 @@
-exercicio 1 
+exercício 1 
 
 /*
 Nome do Arquivo: ATIVIDADE 34
 autor: Rhuan Wictor Chultez de Oliveira
 Data:12/03/2025
-Descrição: apertar o botao e fazer o led piscar com o botao
+Descrição: apertar o botão e fazer o led piscar com o botão
 */
 #define pinBotao 10
 #define pinLed 2
@@ -39,7 +39,7 @@ void loop()
   estadoAnteriorBotao = estadoAtualBotao; 
 } 
   
-exercicio 2
+exercício 2
 
 /*
 Nome do Arquivo: ATIVIDADE 34
