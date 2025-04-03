@@ -1,0 +1,54 @@
+/*
+Nome do arquivo: Funções
+Autor: Rhuan Wictor Chultez de Oliveira
+Data: 03/04/2025
+Descrição: Comentar as funcões
+
+
+
+Funções comentadas
+
+#include <Arduino>// biblioteca do Arduino
+
+const int pinBotao = 3; // constante inteira que define o botão
+
+void liga LED(int); // variável inteira que liga o led
+void desliga LED(int);// variável inteira que desliga o led
+void pisca LED(int, unsigned long);// variável que ira piscar o led
+int somaDeDoisNumeros(int, int); // variável inteira que ira fazer uma soma
+
+void setup()
+{
+  pinMode(2, OUTPUT); //definiu a saída do led
+  Serial. Begin(9600); // velocidade 
+}
+
+void loop()
+{
+  pisca LED(2, 100); // numero do led + o tempo que  ira piscar
+  int resultadosDaSoma = somaDeDoisNumeros(4, 8); // variável inteira que ira somar dois números
+  Serial.println(resultadosDaSoma); // ira mostrar o resultado da soma
+}
+
+void liga LED(int pin) // função que liga o led do tipo inteira 
+{
+  digitalWrite(pin, HIGH); // função que liga o led com o pino definido
+}
+
+void desliga LED(int pin) // função que desliga o led do tipo inteira
+{
+  digitalWrite(pin, LOW); // função que desliga o led com o pino definido
+}
+
+void pisca LED(int pin, unsigned long tempo) // função que pisca o led com uma variável inteira e de tempo
+{
+  liga LED(pin); // função que liga o led com o pino definido
+  delay(tempo); // função para parar um código
+  desliga LED(pin); // função que desliga o led com o pino definido
+  delay(tempo); // função para parar um código
+}
+int somaDeDoisNumeros(int numero A, int numero B) // função com uma variável inteira da soma de dois números , com duas variáveis inteiras com numero A e numero B
+{
+  int resultado = numero A + numero B; // variável inteira resultado da soma de numero A + numero B
+  return resultado; // mostrara o resultado
+}
