@@ -1,0 +1,54 @@
+ate o exercício 4
+
+#include <Arduino.h>
+#include <Bounce2.h>
+#define pinBotaoA 23
+#define pinBotaoB 19
+#define pinBotaoC 15
+int vetor[0] { 0 ,1 , 2, 3};
+
+Bounce botaoA = Bounce();
+Bounce botaoB = Bounce();
+Bounce botaoC = Bounce();
+void setup()
+{
+  botaoA.attach(pinBotaoA, INPUT_PULLUP);
+  botaoB.attach(pinBotaoB, INPUT_PULLUP);
+  botaoC.attach(pinBotaoC, INPUT_PULLUP);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  static int contagem = 0;
+  static bool modoSelecao = 0;
+  static bool contador = 1;
+  botaoA.update();
+  botaoB.update();
+  botaoC.update();
+  for(int i=0; i<=3; i++)
+  Serial.println(i);
+  {
+  }
+
+  if (botaoA.fell())
+  {
+    Serial.printf("SE BOTAO A  %d FOR TRUE  \n\r", !contador);
+     for(int i=0; i<=3; i++)
+     Serial.println(i);
+     modoSelecao = !modoSelecao;
+    Serial.println(modoSelecao);
+  }
+  if (botaoB.fell())
+  {
+    Serial.printf(" SE BOTAO B %d FOR FALSE   \n\r", contador);
+    for(int i=0; i<=3; i++)
+    Serial.println(i);
+    Serial.print(modoSelecao);
+  }
+  if (botaoC.fell())
+  {
+    modoSelecao = !modoSelecao;
+    Serial.println(modoSelecao);
+  }
+}
